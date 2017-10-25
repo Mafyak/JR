@@ -1,0 +1,48 @@
+package com.company;
+
+/* Четные символы
+Считать с консоли 2 имени файла.
+Вывести во второй файл все символы с четным индексом.
+Пример:
+второй символ, четвертый символ, шестой символ и т.д.
+Закрыть потоки ввода-вывод
+Требования:
+1. Программа должна считывать имена файлов с консоли (используй BufferedReader).
+2. BufferedReader для считывания данных с консоли должен быть закрыт.
+3. Программа должна считывать содержимое первого файла (используй FileReader c конструктором String).
+4. Поток чтения из файла (FileReader) должен быть закрыт.
+5. Программа должна записывать во второй файл все байты из первого файла с четным индексом (используй FileWriter).
+6. Поток записи в файл (FileWriter) должен быть закрыт.
+*/
+
+//Программа ведёт себя так себе - из-за переброса вводных данных в тип String - мы получаем данные байт символа а не сам символ - например вместо "1" мы получаем "49"
+
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) {
+        //это пример вывода
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            String fName1 = reader.readLine();
+            String fName2 = reader.readLine();
+            FileReader fReader = new FileReader(fName1);
+            FileWriter fWriter = new FileWriter(fName2);
+            int counter =0;
+            String data;
+            while (fReader.ready()){
+                if (counter%2==1){
+                    data = String.valueOf(fReader.read());
+                    fWriter.write(data);
+                }
+                counter++;
+            }
+            reader.close();
+            fReader.close();
+            fWriter.close();
+        }
+        catch (IOException e){System.out.println(e);}
+
+
+    }
+}
