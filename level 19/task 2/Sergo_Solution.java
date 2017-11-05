@@ -13,7 +13,7 @@
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class goForIt implements AmigoStringWriter{
+public class Sergo_Solution implements AmigoStringWriter{
 
     public static void main(String[] args) {
 
