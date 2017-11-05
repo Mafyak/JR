@@ -12,7 +12,7 @@
 7. Класс TableAdapter должен переопределять метод getHeaderText согласно заданию.
 */
 
-    public class Solution {
+    public class Sergo_Solution {
         public static void main(String[] args) {
             //это пример вывода
             ATable aTable = new ATable() {
