@@ -7,13 +7,19 @@ public class Surface {
     private double indexX;
     private double indexY;
     private double indexZ;
-    private double indexK;
-    private double[] surfaceIndexSet = new double[4];
+    private double[] surfaceIndexSet = {indexX, indexY, indexZ};
 
     Surface(Dot a, Dot b, Dot c){
         this.a = a;
         this.b = b;
         this.c = c;
+        this.indexX = (b.getY()-a.getY())*(c.getZ()-a.getZ()) - (b.getZ()-a.getZ())*(c.getY()-a.getY());
+        this.indexY = (b.getZ()-a.getZ())*(c.getX()-a.getX()) - (b.getX()-a.getX())*(c.getZ()-a.getZ());
+        this.indexZ = (b.getX()-a.getX())*(c.getY()-a.getY()) - (b.getY()-a.getY())*(c.getX()-a.getX());
+    }
+
+    public void printIndexes(){
+        System.out.println("Indexes: x: " + this.indexX + ", y: " + this.indexY + ", z: " + this.indexZ);
     }
 
     public double[] getSurfaceIndexSet() {
