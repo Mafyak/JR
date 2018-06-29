@@ -11,11 +11,8 @@ JSP Directives.
     
 JSP Actions - действия могут воздействовать на стандартный поток вывода, юзать, модифицировать и создавать объекты.
     <jsp:useBean> - объявление объекта JavaBean
-    <jsp:setProperty> - 
-    <jsp:getProperty> - 
-    <jsp:useBean> - 
+    <jsp:setProperty>, <jsp:getProperty>, <jsp:useBean>, <jsp:forward>
     <jsp:include> - ставляет файл при запросе страницы
-    <jsp:forward> - 
     <jsp:plugin> -  подключение модулей, аплетов
     <jsp:param> - определение значения параметра, для параметров вне бина
     
@@ -40,7 +37,7 @@ JSTL Core Tags
     <c:out value="${'<tag> , &'}" default=deftest" />
       value - выводимая инфа
       default - по умолчани
-      escapeXml - 
+      escapeXml
     <c:set var="salary" scope="session" value="${2000*2}"/>
     <c:set target="${name}" property="name" value="Sidorov"/>
       value, target, property, var, scope
@@ -61,11 +58,9 @@ JSTL Core Tags
     <c:url> 
       value, context, var, scope
     <c:param> - добавляет параметр к запросу сформированноми при помощи <c:url>
-      name
-      value
+      name, value
     <c:redirect>
-      url
-      context
+      url, context
     
  FMT: Format tags - основной элемент для локализации
     <fmt:formatNumber>
@@ -87,16 +82,10 @@ SQL, XML tags, Functions
 Пользовательские теги
     Для создания надо определить класс обрабортчика тега, определить его поведение.
     При определении нового тега, создаётся класа джава который должен реализовывать интерфейс jsp.tagext.Tag
-    Обычно создаётся класс который наслед один из TagSupport BodyTagSupport - реализуют Tag и содержат стандарт методы
-    Если в
+    Обычно создаётся класс который наслед один из TagSupport или BodyTagSupport - реализуют Tag и содержат стандарт методы
     Чтобы сгенерить вывод .юзается метод write()
     PageContext - класс работы с тегами
     body-content 
       empty, jsp, tagdependent
       
-    
-    
-    
-    
-    
-    
+На финалке обязательно написать как минимум 1 пользовательский тег      
