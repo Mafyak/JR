@@ -1,0 +1,102 @@
+Элементы JSP
+
+JSP Directives.
+    Директивы - инструкции jsp компилятору.
+    Бывают page, include, taglib
+    <%@ ***** %>
+    <%@ page import="java.util.*" %> page - относится ко всей странице
+    <%@ include file="relativeURL" %> include - текст или код. Вставляет на этапе трансляции.
+    <%@ taglib uri="URIToLibrary" prefix="tagPrefix" %> taglib - объявляет что jsp юзает либу, 
+      если не получается законектить - фатал
+    
+JSP Actions - действия могут воздействовать на стандартный поток вывода, юзать, модифицировать и создавать объекты.
+    <jsp:useBean> - объявление объекта JavaBean
+    <jsp:setProperty> - 
+    <jsp:getProperty> - 
+    <jsp:useBean> - 
+    <jsp:include> - ставляет файл при запросе страницы
+    <jsp:forward> - 
+    <jsp:plugin> -  подключение модулей, аплетов
+    <jsp:param> - определение значения параметра, для параметров вне бина
+    
+JSTL JavaServer Pages Standard Tag Library
+    Библиотека тегов и функций, который могут понадобитится разработчику.
+    core - базовые выражения: if\switch\exception\foreach
+    fmt - formatting: локализация\даты
+    sql - доступ к БД
+    xml - доступ и преобразование XML
+    <%@taglib uri="http://***/jstl/core" prefix="c" %> - для обычной jsp
+    
+Expression Language - для манипулирования данными при их отображения в JSP
+    доступ к объекту через сессию(просетать в сессии).
+    "${тело}" 
+    Подходит для объектов придерживающихся JavaBean
+    <c:set var="salary" scope="request" value="${40}" />
+    <c:out value="${requestScope.salary}" />
+    <c:if test="${not empty user and user.name neq 'guest'}"> User in Customer.</c:if> - проверка существования изера
+    eq=equals neq=not_equals lt=less_than le=less\equals
+    
+JSTL Core Tags
+    <c:out value="${'<tag> , &'}" default=deftest" />
+      value - выводимая инфа
+      default - по умолчани
+      escapeXml - 
+    <c:set var="salary" scope="session" value="${2000*2}"/>
+    <c:set target="${name}" property="name" value="Sidorov"/>
+      value, target, property, var, scope
+    <c:remove var="salary" scope="session"/>
+      var, scope
+    <c:catch var = "catchException"> 
+      var
+    <c:if test="${salary >2000}" var = "testif"> <p> Salary is <c:out value="${salary}"/> </p> </c:if>
+      test, var, scope
+    <c:choose><c:otherwise>   <c:choose> <c:when test="***"> TEST </c:when> <c:when test="***"> TEST2 </c:when> </c:choose>
+      test
+    <c:import>
+      url, context, charEncoding, var, scope, varReader
+    <c:forEach var="i" begin="1" end="5"> Item <c:out value="${i}"/> </c:forEach>
+      items, begin, end, step, var, varStatus
+    <c:forTokens>
+      delims
+    <c:url> 
+      value, context, var, scope
+    <c:param> - добавляет параметр к запросу сформированноми при помощи <c:url>
+      name
+      value
+    <c:redirect>
+      url
+      context
+    
+ FMT: Format tags - основной элемент для локализации
+    <fmt:formatNumber>
+    <fmt:parseNumber>
+    <fmt:formatDate>
+    <fmt:parseDate>
+    <fmt:bundle> - загружает ресурс бандл
+    <fmt:setBundle>
+    <fmt:setLocale>
+    <fmt:timeZone>
+    <fmt:message>
+    <fmt:requestEncoding>
+    
+SQL, XML tags, Functions
+    SQL: <sql:setDataSource><sql:query><sql:update>...
+    XML: <x:out><x:parse><x:set><x:if><x:forEach><x:when><x:choose>...
+    Functions: fn:contains(), fn:endsWith(), fn:indexOf(), fn:length(), fn:split(), fn:substring()... 
+    
+Пользовательские теги
+    Для создания надо определить класс обрабортчика тега, определить его поведение.
+    При определении нового тега, создаётся класа джава который должен реализовывать интерфейс jsp.tagext.Tag
+    Обычно создаётся класс который наслед один из TagSupport BodyTagSupport - реализуют Tag и содержат стандарт методы
+    Если в
+    Чтобы сгенерить вывод .юзается метод write()
+    PageContext - класс работы с тегами
+    body-content 
+      empty, jsp, tagdependent
+      
+    
+    
+    
+    
+    
+    
