@@ -31,3 +31,9 @@ assumeThat
 @Test
 @Ignore("comment message")
 
+
+
+фмт setLocale vale = ${locale}
+фмт setbundle
+
+в команде - setAttribute("locale", locale)
