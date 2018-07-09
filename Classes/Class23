@@ -1,0 +1,33 @@
+JUnit
+
+expected - ожидаемый класс
+timeout - время ожидания
+
+AssertEquals
+AssertTrue
+AssertSame - проверяет ссылки
+AssertNotSame - проверят ссылки на различные объекты
+AssertNull - проверка на налл
+AssertThat - проверка условия(actual, matcher)
+fail - вызывает ошибку
+
+assumeNoException
+assumeNotNull
+assumeThat
+
+Фикстура - состояние среды которое требудется для успешного выполнения тестового метода(среда выполения)
+@BeforeClass 
+@Before - вызывается перед каждым методом
+@After
+@AfterClass
+
+Тестирование исключительных ситуаций
+@Test (expected = IllegalArgumentException.class)
+  public void blaBlaTest() throws IllegalArgumentException {
+    //code
+    }
+    
+Игнорирование тестов
+@Test
+@Ignore("comment message")
+
