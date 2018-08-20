@@ -1,0 +1,18 @@
+Externalizable vs Serializable
+
+Ext -> faster
+Ext -> not just marker
+
+Concurrency
+
+Locks -> ReentrantLock, ReentrantReadWriteLock
+
+TimeUnit -> timedWait, timedJoin, sleep
+
+ExecutorService 
+ newSingleThreadExecutor - запускает один трэд
+ execute - запускает потоки, submit - запускают с возращаемым значением.
+ shutdown - останавливает все запущенны им потоки и сам поток
+ 
+Callable
+ call() - метод в код который помещается задача(аналог run)

@@ -1,0 +1,57 @@
+Formatter
+
+ В Форматере неявно присутствует StringBuilder, который накапливает данные
+  Принимает на вход: Locale / Appendable / Appendable, Locale / String(filename) / OutputStream / PrintStream
+  Методы: close() / flush() / format(String, Object args) / ioException / locale / out / toString
+  
+ %[argument_index][flags][width][precision]conversion
+ 
+1)    Conversion
+ Formatter formatter = new Formatter();
+ String test = "example";
+ formatter.format("text - %s", test);
+ sout(formatter);
+ %a - 16ричное представление
+ %o - 8ричное представление
+ %x - 16ричное целое целое
+ 
+2)  Argument_index - работа с индексом данных
+  i$ - уазывает на положение аргумента(индексация начинается с 1, а не с 0) 
+  < - указывает на предыдущий аргумент
+  
+ 3) Flag - выравнивание аргументов
+  - - выравнивание по левому краю
+  # - превращение в десятичную точку
+  ( - отображает отрицательные числа в круглых скобках
+    
+ 4) Width - минимальное число символов отводимое под представление ппараметра
+  
+ 5) Precision - число символов в десятичной части 
+  
+  
+Internalization
+
+  Locale l = new Locale("en", "US", "WINDOWS");
+  или
+  Locale l = Locale.CANADA_FRENCH;
+  
+  Методы Locale
+  getDefault() - вернёт локаль
+  getLanguage() - вернёт язык
+  getCountry() - код региона
+  getAvailableLocales() - список локалей
+  
+  
+ResourceBundle
+  
+  Закидываем файлы:
+  prop_en_US.properties
+  prop_en.properties
+  
+  Пример того что будет в файле(ключи обязаны совпадать)
+  prop.key1 = value
+  
+  Пример кода:
+  ResourceBundle bundle; 
+  String key = "prop.key1";
+  bundle = ResourceBundle.getBundle("resources.prop", new Locale("ru", "RU")); sout (bundle.getString(key)); -> 

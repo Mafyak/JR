@@ -1,0 +1,55 @@
+SAX - быстрый, легковесный и удобен при чисто просматривании, основан на событиях, push
+DOM - лучше в случае если изменяем документ, древовидная структура, загружает весь документ, может менять
+StAX - Streaming API for XML - так же последовательно проходит по документу, может записать документ 
+  есть итератор курсора, pull
+
+Есть функционал по созданию xml документа.
+Основные классы:
+  InputFactory
+  StreamReader
+  StreamWriter
+  
+DOM - Document Object Model
+http://www.w3.org/TR/#tr_DOM
+  Document - основной корневой элемент
+  Node - основной объект DOM
+    getNodeType
+    getNodeValue
+    getParentNode
+    getChildNodes
+    getFirstChild
+    getLastChild
+    getAttributes
+  Element - работа с элементами XML документа
+    getTagName
+    hasattribute
+    getAttributeNode
+  Attr - для работы с атрибутами
+    getName
+    getOwnedElement
+    getValue
+    setValue
+    isId
+  Text - для работы с текстом
+    getWholeText
+    replaceWholeText
+
+JAXP - java API for XML Processing
+  Упрощает работу с SAX и DOM парсерами.
+ 
+  TrAX - transformation for API - API для XML преобразований
+
+JDOM - для более удобного доступа для работы с XML документа
+  Document
+  Parent
+  Element
+  Text
+  Attribute
+ 
+JAXB - архитектура связывания данных между java И xml
+  Marshalling -> to XML
+  Unmarshalling -> to java object
+    
+ДЗ
+SAX, DOM, StAX
+Использовать патерн builder +- pattern director

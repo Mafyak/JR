@@ -1,0 +1,38 @@
+Преподователь
++375-29-831-33-81
+aliaksandr_harkusha@epam.com
+
+Порядковый номер - 7
+
+Добавить номер старосты:
++375-29-265-59-82 Stas
+
+Занятия по дням:
+пон ср пят
+
+След занятие - пятница
+
+Книги для прочтения
+1) Head First Java
+2) Блинов (2013)
+3) Работа с MySQL MS SQL Server Oracle в примерах (Куликов Станислав)
+
+Javadoc method example:
+    /**
+     * Method showHealth description. This method was created to show actual health data about an object.
+     *
+     * @param health shows health amount
+     * @author Sergo Huba
+     * @return returns health amount multiplied by two
+     * @since 2014-03-31
+     */
+    public int showHealth(int health) {
+        return health*100;
+    }
+
+
+
+ При создании класса с оператором new, java выделяет достаточно памяти для всех примитивных полей внутри класса и внутри методов которые задействованы в объекте.
+ Ссылка в стеке, объект в хипе. А инфа вся находится чисто в RAM.
+ 
+ React.js

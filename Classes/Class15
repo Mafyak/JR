@@ -1,0 +1,14 @@
+https://habr.com/post/277669/
+
+MultiThreading
+
+Поток - средство которое организует одновременные выполнение нескольких задач.
+
+Priority
+Demon
+ThreadGroup
+Exceptions
+Synch - потоки шарят хип, но стек для каждого одинаковый
+wait, notify, notifyAll
+Deadlock 
+

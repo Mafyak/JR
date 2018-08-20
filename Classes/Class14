@@ -1,0 +1,21 @@
+List
+  ArrayList
+  SortedList
+  Queue
+  Deque
+  SortedDeque
+
+Map
+  EntryMap
+  NavigableMap
+  HashMap
+  
+Collections class
+
+Legacy Collections
+  Vector
+  Properties -> setProperty, getProperty, load(InputStream inStream) - параметры - ключ\значение
+  
+Enum
+  EnumSet
+  EnumMap

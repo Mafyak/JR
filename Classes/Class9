@@ -1,0 +1,8 @@
+String API
+
+Форматирование строк:
+format(String format, Object... args)
+format(Locale l, String format, Object... args)
+regionalMatch
+
+Мои задачи 13-14

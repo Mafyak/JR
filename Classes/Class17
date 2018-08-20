@@ -1,0 +1,54 @@
+      XML
+Тэг - <tag>
+Элемент - <name>Element</name>
+Атрибут - <note att="1">
+
+Тэги - case-sensitive
+<!-- comment -->
+
+types: valid, invalid, well-formed
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+namespace - логическая группа уникальных идентификаторов
+xmlns = xml namespace
+Префик для namespace обязателен и должен быть уникален:
+
+xmlnm:address = "http://epam.com/page1.php"
+xmlnm:book = "html://epam.com/book1.php"
+
+
+    XSD
+ XSD - XML Schema Definition
+    
+    
+    DTD
+Document Type Definition - описание структуры
+<!ATTLIST student
+login ID #REQUIRED
+major CDATA #REQUIRED>
+
+CDATA- последоват символов
+ID - идентификатор в доке
+IDREF - 
+ENTITY - имя внешней сущнгости
+NMTOKEN
+
+#REQUIRED
+#IMPLIED - может отсутствовать либо по умолчанию(если проставлен)
+#FIXED defaultValue - может приимать одно значение, после аттрибута - надо указать значение по дефолту
+
+<!ENTITY company 'Sun Microsoft'>
+<sender> $company;</sender>
+
+XML Parser
+
+Parsers -> Object Based(DOM)
+        -> Event Based(SAX\StAX)
+        
+SAX - последовательно читает(весь в память не загружает) и разбирает данные из входного потока
+Создать: XMLReaderFactory.createXMLReader(url);
+
+Задание
+Взять таск 1, её проинициализировать через xml парсер, а не через просто txt 
+ файлик(сделать парсер который распарсит данные и заполнит поля)
